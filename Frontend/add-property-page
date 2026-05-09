@@ -10,6 +10,7 @@
 
     <style>
         :root {
+//this is
             --bg: #0f172a;
             --bg-soft: #111827;
             --card: #1f2937;
