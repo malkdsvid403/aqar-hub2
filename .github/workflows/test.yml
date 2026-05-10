@@ -1,16 +1,21 @@
-name: Simple Check
+name: CI Test
 
 on: push
 
 jobs:
-  check:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Check files exist
-        run: |
-          test -f Frontend/login-page.html || { echo "missing"; exit 1; }
-          echo "Files are OK"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
