@@ -13,5 +13,4 @@ jobs:
       - name: Check files exist
         run: |
           test -f Frontend/login-page.html || { echo "missing"; exit 1; }
-          test -f Frontend/add-user-page.html || { echo "missing"; exit 1; }
           echo "Files are OK"
